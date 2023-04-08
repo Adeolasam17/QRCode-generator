@@ -1,3 +1,5 @@
+// Dom Elements
+
 const Form = document.getElementById("generate-code");
 const qr = document.getElementById("qrcode");
 const container = document.querySelector(".container");
@@ -18,22 +20,33 @@ function GenerateCode(event) {
     setTimeout(() => {
       hideSpinner();
 
+//    Display generated qr code
+      
       generateQrCode(url,size);
 
+//    Display save qr code button
+      
       setTimeout(() => {
         const saveUrl = qr.querySelector("img").src;
         createSaveBtn(saveUrl);
       }, 50);
+      
     }, 1000);
   }
+  
+//   Show spinner
 
   function showSpinner() {
     return Spinner.classList.add("show-spin");
   }
+  
+//   Hide spinner
 
   function hideSpinner() {
     return Spinner.classList.remove("show-spin");
   }
+  
+//   Generate qr code
 
   function generateQrCode(url, size) {
     const qrCode = new QRCode("qrcode", {
@@ -43,6 +56,8 @@ function GenerateCode(event) {
     });
   }
 
+//   clear qr code
+  
   function clearUI() {
     qr.innerHTML = "";
     const saveBtn = document.getElementById("save-link");
@@ -50,6 +65,8 @@ function GenerateCode(event) {
       saveBtn.remove();
     }
   }
+  
+//   save qr code button
 
   function createSaveBtn(saveUrl) {
     const link = document.createElement("a");
@@ -60,6 +77,9 @@ function GenerateCode(event) {
     link.innerHTML = "Save QRCode";
     container.appendChild(link);
   }
+  
 }
+
+// Form event listener
 
 Form.addEventListener("submit", GenerateCode);
