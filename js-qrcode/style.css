@@ -131,9 +131,8 @@ p {
   .col-1,.col-2 {
   width: 80%;
   }
-  .text-lg {
-    font-size: 20px;
-    font-weight: bold;
+  .col-1 .text-lg {
+    font-size: 26px;
   }
   #link,#size {
     font-size: 15px;
