@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Free Online QR Code Generator</title>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <h3 class="logo">QR Code Generator</h3>
+    </nav>
+    <main class="banner">
+      <div class="row">
+        <div class="col-1">
+          <h2 class="text-lg">QR Code Generator</h2>
+          <br>
+          <p>Qr Codes allow smartphone users to access your website simply and quickly</p>
+          <br>
+          <p>Enter your url below to generate a qr code and download the image</p>
+          <form id="generate-code">
+            <input type="url" name="url" id="url" placeholder="Enter a URL">
+            <select name="size" id="size">
+              <option class="option" value="100" selected>100x100</option>
+              <option class="option" value="200">200x200</option>
+              <option class="option" value="300">300x300</option>
+              <option class="option" value="400">400x400</option>
+              <option class="option" value="500">500x500</option>
+            </select>
+            <button type="submit" class="btn">generate qr code</button>
+          </form>
+        </div>
+        <div class="col-2">
+          <img src="./img/qr-code.svg" alt="Qr-Code" class="col-img">
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="spinner" class="hide">
+          <svg class="spinner"></svg>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div id="qrcode"></div>
+      </div>
+    </main>
+  </header>
+  
+  <script src="./main.js"></script>
+</body>
+</html>
